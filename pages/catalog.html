@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог продуктов</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<!-- Навигация -->
+<nav class="navbar">
+  <div class="navbar-main-container">
+    <div class="navbar-sub-container">
+      <div class="navbar-logo">
+
+      </div>
+      <div class="navbar-links">
+        <a href="index.html" >Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="lists.html">Список</a>
+        <a href="infa.html">Информация</a>
+        <a href="table.html">Цены</a>
+        <a href="data_form.html" >Заказ</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section id="catalog" class="section">
+  <h2 class="header-product-catalog">Каталог продуктов</h2>
+  <div id="productGrid" class="product-grid">
+    <!-- Product cards will be inserted here by JavaScript -->
+  </div>
+
+  <div id="totalCount"></div>
+
+  <!-- Кнопка "Перейти в корзину" -->
+  <div class="cart-button-container">
+    <a href="data_form.html">КОРЗИНА</a>
+  </div>
+
+
+</section>
+
+
+<script src="../assets/js/catalog.js"></script>
+</body>
+</html>

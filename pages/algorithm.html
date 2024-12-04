@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вычисление X в зависимости от значения A</title>
+</head>
+<style>
+  .container {
+    margin-top: 100px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .button {
+    width: 100px;
+  }
+  .hide {
+    display: none;
+  }
+</style>
+<body>
+<nav class="navbar">
+  <div class="navbar-main-container">
+    <div class="navbar-sub-container">
+      <div class="navbar-logo">
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Главная</a>
+        <a href="lists.html">Списки</a>
+        <a href="infa.html">Информация</a>
+        <a href="table.html">Цены</a>
+        <a href="change_letters.html">Паспорт</a>
+        <a href="data_form.html">Заказ</a>
+        <a href="algorithm.html" class="active">Решение алгоритмической задачи</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Вычисление X на основе значения A</h2>
+  <p>Дано вещественное число A. Вычислить x = a**2 + 4 + 5, если a < 62; в противном случае x = 1/(a**2) + 4*a + 5.</p>
+
+  <!-- Примеры с заранее установленными значениями -->
+  <div>
+    <h3>Примеры для значения A:</h3>
+    <p><strong>A: 50</strong> (A < 62):</p>
+    <p>Результат: <span id="exampleResultLessThan62"></span></p>
+    <p><strong>A: 70</strong> (A >= 62):</p>
+    <p>Результат: <span id="exampleResultGreaterThan62"></span></p>
+    <button onclick="calculateExampleResults()">Оценить</button>
+  </div>
+
+  <!-- Основной блок с вводом и кнопками -->
+  <div>
+    <label for="inputA">Введите значение A:</label>
+    <input type="number" id="inputA" step="any">
+  </div>
+
+  <div>
+    <span>Действие 1:</span>
+    <button class="button" onclick="calculateX()">Проверить</button>
+  </div>
+
+  <!-- Поле для отображения результата -->
+  <p id="result" class="hide">Результат X: не определен</p>
+
+  <!-- Форма для отправки результатов на сервер -->
+  <form action="https://www.bing.com/search" id="UserEnter" name="UserEnter" target="_blank">
+    <input type="hidden" name="q" value="Решение задачи по вычислению X">
+    <input type="hidden" name="formulation" value="Вычислить X в зависимости от значения A">
+
+    <label for="resultInput">Результат решения задачи:</label>
+    <input id="resultInput" name="result" type="text" value="не определен" readonly>
+
+    <div>
+      <span>Действие 2:</span>
+      <button class="button" type="submit">Отправить</button>
+    </div>
+  </form>
+
+  <button class="button" onclick="reset()">Сбросить</button>
+</div>
+
+<script>
+  function calculateExampleResults() {
+    // Заранее заданные значения
+    const aLessThan62 = 50;
+    const aGreaterThan62 = 70;
+
+    // Рассчёт для примеров
+    const xLessThan62 = Math.pow(aLessThan62, 2) + 4 + 5;
+    const xGreaterThan62 = 1 / Math.pow(aGreaterThan62, 2) + 4 * aGreaterThan62 + 5;
+
+    // Отображение результатов для примеров
+    document.getElementById('exampleResultLessThan62').innerText = `X = ${xLessThan62}`;
+    document.getElementById('exampleResultGreaterThan62').innerText = `X = ${xGreaterThan62}`;
+  }
+
+  function calculateX() {
+    const a = parseFloat(document.getElementById('inputA').value);
+    let x;
+
+    if (a < 62) {
+      x = Math.pow(a, 2) + 4 + 5;
+    } else {
+      x = 1 / Math.pow(a, 2) + 4 * a + 5;
+    }
+
+    // Отображаем результат в параграфе с id "result"
+    document.getElementById('result').innerText = `Результат X: ${x}`;
+    document.getElementById('resultInput').value = x; // Записываем результат в скрытую форму
+  }
+
+  function reset() {
+    document.getElementById('inputA').value = '';
+    document.getElementById('result').innerText = 'Результат X: не определен';
+    document.getElementById('resultInput').value = 'не определен';
+  }
+</script>
+
+</body>
+</html>

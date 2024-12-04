@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM_JS. Считываем информацию из DOM</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .data-field {
+      margin: 10px 0;
+    }
+    .hide {
+      opacity: 0;
+      display: none;
+    }
+    .label {
+      display: inline-block;
+      width: 150px; /* Fixed width for labels */
+      font-weight: bold;
+    }
+    .translated-label {
+      font-weight: bold;
+    }
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+      cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-logo"></div>
+  <div class="navbar-links">
+    <a href="index.html">Главная</a>
+    <a href="lists.html">Списки</a>
+    <a href="infa.html">Информация</a>
+    <a href="table.html">Цены</a>
+    <a href="change_letters.html" class="active">Паспорт</a>
+    <a href="data_form.html">Заказ</a>
+  </div>
+</nav>
+<main class="content">
+  <h2>Вторая и третья страницы паспорта</h2>
+
+  <h3>Ваши данные:</h3>
+  <div class="data-field">
+    <span class="label">Орган выдачи:</span>
+    <span id="issuingAuthority">Управление по вопросам миграции</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Серия:</span>
+    <span id="passportSeries">1234</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Номер:</span>
+    <span id="passportNumber">567890</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Фамилия:</span>
+    <span id="surname">Ляшенко</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Имя:</span>
+    <span id="name">Дарья</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Отчество:</span>
+    <span id="middleName">Михайловна</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Пол:</span>
+    <span id="gender">Женский</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Дата рождения:</span>
+    <span id="birthDate">2005-06-08</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Место рождения:</span>
+    <span id="placeOfBirth">Москва</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Дата выдачи:</span>
+    <span id="issueDate">2020-01-01</span>
+  </div>
+  <div class="data-field">
+    <span class="label">Срок действия:</span>
+    <span id="expiryDate">2030-01-01</span>
+  </div>
+
+  <button id="translateToEnglishBtn">Перевести данные на английский</button>
+  <button id="translateToRussianBtn" style="display: none;">Перевести данные на русский</button>
+
+  <div class="hide">
+    <h3 class="hide">Переведённые данные:</h3>
+    <div class="hide" id="translatedData"></div>
+  </div>
+  <div>
+    <a href="../assets/images/screen.png" target="_blank">
+      <img src="../assets/images/screen.png" alt="Screen Image" class="thumbnail"/>
+    </a>
+  </div>
+
+
+</main>
+<script>
+  // Store the original data in an object
+  const originalData = {
+    issuingAuthority: 'Управление по вопросам миграции',
+    passportSeries: '1234',
+    passportNumber: '567890',
+    surname: 'Ляшенко',
+    name: 'Дарья',
+    middleName: 'Михайловна',
+    gender: 'Женская',
+    birthDate: '2005-05-06',
+    placeOfBirth: 'Москва',
+    issueDate: '2020-01-01',
+    expiryDate: '2030-01-01'
+  };
+
+  document.getElementById('translateToEnglishBtn').addEventListener('click', function() {
+    // Translate data to English with bold text
+    document.getElementById('issuingAuthority').innerHTML = `<span>Управление по вопросам миграции</span>`;
+    document.getElementById('passportSeries').innerHTML = `<span>1234</span>`;
+    document.getElementById('passportNumber').innerHTML = `<span>567890</span>`;
+    document.getElementById('surname').innerHTML = `<b>LYASHENKO</b>`;
+    document.getElementById('name').innerHTML = `<b>DARIA</b>`;
+    document.getElementById('middleName').innerHTML = `<b>MIHAILOVNA</b>`;
+    document.getElementById('gender').innerHTML = `<span>Женская</span>`;
+    document.getElementById('birthDate').innerHTML = `<span>2005-05-06</span>`;
+    document.getElementById('placeOfBirth').innerHTML = `<span>Москва</span>`;
+    document.getElementById('issueDate').innerHTML = `<span>2020-01-01</span>`;
+    document.getElementById('expiryDate').innerHTML = `<span>2020-01-01</span>`;
+
+    // Show Russian translation button and hide English translation button
+    document.getElementById('translateToRussianBtn').style.display = 'inline';
+    this.style.display = 'none'; // Hide the English translation button
+  });
+
+  document.getElementById('translateToRussianBtn').addEventListener('click', function() {
+    // Revert data back to the original Russian text without bold styling
+    document.getElementById('issuingAuthority').innerText = originalData.issuingAuthority;
+    document.getElementById('passportSeries').innerText = originalData.passportSeries;
+    document.getElementById('passportNumber').innerText = originalData.passportNumber;
+    document.getElementById('surname').innerText = originalData.surname;
+    document.getElementById('name').innerText = originalData.name;
+    document.getElementById('middleName').innerText = originalData.middleName;
+    document.getElementById('gender').innerText = originalData.gender;
+    document.getElementById('birthDate').innerText = originalData.birthDate;
+    document.getElementById('placeOfBirth').innerText = originalData.placeOfBirth;
+    document.getElementById('issueDate').innerText = originalData.issueDate;
+    document.getElementById('expiryDate').innerText = originalData.expiryDate;
+
+    // Show English translation button and hide Russian translation button
+    document.getElementById('translateToEnglishBtn').style.display = 'inline';
+    this.style.display = 'none'; // Hide the Russian translation button
+  });
+</script>
+
+</body>
+</html>

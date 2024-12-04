@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр изображения</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            width: 600px;
+            height: 400px;
+            object-fit: contain;
+            border: 0px solid #ccc;
+            border-radius:5px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<img id="displayedImage" src="" alt="Просмотр изображения">
+<script>
+  // Функция для получения параметров из URL
+  function getQueryParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Получаем параметр 'img' и устанавливаем его в качестве источника изображения
+  const imageUrl = getQueryParameter('img');
+  if (imageUrl) {
+    document.getElementById('displayedImage').src = imageUrl;
+  } else {
+    document.body.innerHTML = '<h1>Изображение не найдено</h1>';
+  }
+</script>
+</body>
+</html>

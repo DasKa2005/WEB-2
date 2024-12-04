@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <title>Списки по теме дизайна интерьера</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-top: 70px; /* Увеличиваем отступ сверху */
+      margin-bottom: 30px; /* Добавляем отступ снизу */
+      font-size: 2.5rem;
+      color: #222;
+      text-align: center;
+    }
+
+
+    ul, ol {
+      margin: 20px auto;
+      padding: 0;
+      list-style: none;
+      max-width: 800px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Общие стили для списков */
+    ul li, ol li {
+      margin-bottom: 10px;
+      padding: 10px;
+      position: relative;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    ul li:hover, ol li:hover {
+      background: #f0f8ff;
+      transform: scale(1.02);
+    }
+
+    /* Стили для ненумерованных списков */
+    ul li {
+      padding-left: 30px;
+      background: #fafafa;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 10px;
+      color: #00bfff;
+      font-size: 1.5rem;
+    }
+
+    ul ul li {
+      background: #f9f9f9;
+      margin-left: 20px;
+    }
+
+    /* Стили для нумерованных списков */
+    ol {
+      counter-reset: item;
+    }
+
+    ol li {
+      padding-left: 30px;
+      background: #fdfdfd;
+    }
+
+    ol li::before {
+      counter-increment: item;
+      content: counter(item) ".";
+      position: absolute;
+      left: 10px;
+      color: #ff7f50;
+      font-weight: bold;
+    }
+
+    ol ol li::before {
+      color: #ffa07a;
+    }
+
+    ol ol {
+      margin-left: 20px;
+    }
+
+    /* Многоуровневые списки */
+    ul ul, ol ul, ul ol, ol ol {
+      margin-left: 20px;
+    }
+
+    /* Заголовки секций */
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      border-bottom: 2px solid #00bfff;
+      display: inline-block;
+      padding-bottom: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Смешанные списки */
+    ul li ol, ul li ul {
+      margin: 10px 0 10px 30px;
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 5px;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      ul, ol {
+        padding: 15px;
+      }
+
+      ul li, ol li {
+        padding-left: 25px;
+      }
+
+      ul li::before, ol li::before {
+        left: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-main-container">
+    <div class="navbar-sub-container">
+      <div class="navbar-logo">
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" >Каталог</a>
+        <a href="lists.html" class="active">Списки</a>
+        <a href="infa.html">Информация</a>
+        <a href="table.html">Цены</a>
+        <a href="data_form.html">Заказ</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<h1>Списки по теме дизайна интерьера</h1>
+
+<!-- Ненумерованный список популярных стилей -->
+<h2>Популярные стили интерьера</h2>
+<ul>
+  <li>Скандинавский стиль</li>
+  <li>Лофт</li>
+  <li>Минимализм</li>
+  <li>Модерн</li>
+  <li>Классический стиль</li>
+</ul>
+
+<!-- Нумерованный список с этапами разработки интерьера -->
+<h2>Основные этапы разработки дизайна интерьера</h2>
+<ol>
+  <li>Изучение потребностей и пожеланий клиента</li>
+  <li>Создание концепции и подбор стиля</li>
+  <li>Планировка и зонирование пространства</li>
+  <li>Выбор материалов и отделки</li>
+  <li>Создание 3D-визуализации</li>
+  <li>Реализация и авторский надзор</li>
+</ol>
+
+<!-- Многоуровневый ненумерованный список с элементами декора -->
+<h2>Элементы декора</h2>
+<ul>
+  <li>Текстиль
+    <ul>
+      <li>Шторы</li>
+      <li>Подушки</li>
+      <li>Пледы</li>
+    </ul>
+  </li>
+  <li>Освещение
+    <ul>
+      <li>Люстры</li>
+      <li>Настольные лампы</li>
+      <li>Светодиодные ленты</li>
+    </ul>
+  </li>
+  <li>Стены
+    <ul>
+      <li>Картины</li>
+      <li>Зеркала</li>
+      <li>Обои</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Многоуровневый нумерованный список с материалами для отделки -->
+<h2>Материалы для отделки интерьера</h2>
+<ol>
+  <li>Для стен
+    <ol>
+      <li>Краска</li>
+      <li>Обои
+        <ol>
+          <li>Бумажные</li>
+          <li>Виниловые</li>
+          <li>Текстильные</li>
+        </ol>
+      </li>
+      <li>Декоративная штукатурка</li>
+    </ol>
+  </li>
+  <li>Для пола
+    <ol>
+      <li>Ламинат</li>
+      <li>Паркет</li>
+      <li>Керамогранит</li>
+      <li>Ковролин</li>
+    </ol>
+  </li>
+  <li>Для потолка
+    <ol>
+      <li>Гипсокартон</li>
+      <li>Натяжные потолки</li>
+      <li>Панели</li>
+    </ol>
+  </li>
+</ol>
+
+<!-- Смешанный список с зонами интерьера -->
+<h2>Зоны интерьера и их особенности</h2>
+<ul>
+  <li>Гостиная
+    <ol>
+      <li>Комфортные диваны и кресла</li>
+      <li>Телевизор или домашний кинотеатр</li>
+      <li>Декоративные элементы
+        <ul>
+          <li>Картины</li>
+          <li>Зеленые растения</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>Кухня
+    <ol>
+      <li>Рабочая зона с плитой и мойкой</li>
+      <li>Обеденная зона</li>
+      <li>Системы хранения</li>
+    </ol>
+  </li>
+  <li>Спальня
+    <ol>
+      <li>Уютное освещение</li>
+      <li>Большая кровать</li>
+      <li>Текстильные элементы
+        <ul>
+          <li>Шторы</li>
+          <li>Покрывало</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+</body>
+</html>

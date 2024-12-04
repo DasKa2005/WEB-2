@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ коммерческого предложения</title>
+    <style>
+        /* Стили для формы */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+            font-size: 0.9rem;
+        }
+
+        input[type="file"]::file-selector-button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #00bfff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #007acc;
+        }
+
+        .form-actions input[type="submit"],
+        .form-actions input[type="reset"],
+        .form-actions input[type="button"] {
+            background-color: #00bfff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-actions input[type="submit"]:hover,
+        .form-actions input[type="reset"]:hover,
+        .form-actions input[type="button"]:hover {
+            background-color: #007acc;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .form-actions input[type="submit"]:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .form-actions {
+                flex-direction: column;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="number"],
+            textarea,
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-main-container">
+        <div class="navbar-sub-container">
+            <div class="navbar-logo"></div>
+            <div class="navbar-links">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="lists.html">Списки</a>
+                <a href="infa.html">Информация</a>
+                <a href="table.html" >Цены</a>
+                <a href="data_form.html" class="active">Заказ</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>Заказ коммерческого предложения по дизайну интерьера</h3>
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <!-- Скрытые поля для отправки данных -->
+        <input type="hidden" name="q" value="design proposal">
+        <input type="hidden" name="function" value="submit_proposal">
+        <input type="hidden" name="page_id" value="3">
+
+        <p>
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+        </p>
+        <p>
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </p>
+        <p>
+            <label for="project_type">Тип проекта:</label>
+            <select id="project_type" name="project_type" required>
+                <option value="apartment">Квартира</option>
+                <option value="house">Дом</option>
+                <option value="office">Офис</option>
+            </select>
+        </p>
+        <p>
+            <label for="area">Площадь объекта (м²):</label>
+            <input type="number" id="area" name="area" placeholder="Введите площадь" required>
+        </p>
+        <p>
+            <label for="style">Предпочтительный стиль:</label>
+            <select id="style" name="style" required>
+                <option value="scandinavian">Скандинавский</option>
+                <option value="loft">Лофт</option>
+                <option value="classic">Классический</option>
+                <option value="minimalism">Минимализм</option>
+            </select>
+        </p>
+        <p>
+            <label for="budget">Бюджет проекта (₽):</label>
+            <input type="number" id="budget" name="budget" placeholder="Введите сумму" required>
+        </p>
+        <p>
+            <label for="additional_info">Дополнительные пожелания:</label>
+            <textarea id="additional_info" name="additional_info" placeholder="Напишите о ваших предпочтениях и пожеланиях"></textarea>
+        </p>
+        <p>
+            <label for="file">План или изображения объекта:</label>
+            <input type="file" id="file" name="file">
+        </p>
+
+        <div class="form-actions">
+            <input type="submit" value="Отправить запрос" id="submitBtn" disabled>
+            <input type="reset" value="Очистить форму">
+            <input type="button" value="Заполнить форму автоматически" onclick="fillFormAutomatically()">
+        </div>
+    </form>
+</div>
+
+<script>
+  const form = document.getElementById("UserEnter");
+  const submitBtn = document.getElementById("submitBtn");
+
+  // Проверка обязательных полей
+  form.addEventListener('input', function() {
+    const isValid = [...form.querySelectorAll('input[required], select[required]')].every(input => input.value.trim() !== "");
+    submitBtn.disabled = !isValid; // Кнопка отправки становится активной, если все обязательные поля заполнены
+  });
+
+  // Функция автоматического заполнения формы
+  function fillFormAutomatically() {
+    document.getElementById("name").value = "Иван Иванов";
+    document.getElementById("phone").value = "+7 (123) 456-78-90";
+    document.getElementById("email").value = "ivan@example.com";
+    document.getElementById("project_type").value = "house";
+    document.getElementById("area").value = "150";
+    document.getElementById("style").value = "loft";
+    document.getElementById("budget").value = "500000";
+    document.getElementById("additional_info").value = "Нужен современный стиль, с открытым пространством.";
+
+    const isValid = [...form.querySelectorAll('input[required], select[required]')].every(input => input.value.trim() !== "");
+    submitBtn.disabled = !isValid; // Разблокируем кнопку отправки, если все обязательные поля заполнены
+  }
+
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Ваш запрос отправлен!");
+    form.submit();
+  });
+</script>
+
+</body>
+</html>

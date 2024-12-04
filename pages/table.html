@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table with Images and Links</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .background-table {
+      margin-top: 100px;
+      margin-bottom: 50px;
+      width: 90%;
+      max-width: 1200px;
+      background-image: url('https://i.pinimg.com/474x/9c/b6/dd/9cb6dd2317d6f25625323616e1963691.jpg');
+      background-size: cover;
+      color: #fff;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    .background-table th, .background-table td {
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1em;
+    }
+    .background-table th {
+      background-color: rgba(0, 0, 0, 0.7);
+      font-size: 1.2em;
+    }
+    .background-table td {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .cell-image {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .background-table a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .background-table a:hover {
+      color: #ffbf00;
+    }
+
+    /* Адаптивный стиль */
+    @media (max-width: 768px) {
+      .background-table {
+        width: 100%;
+        margin-top: 50px;
+      }
+      .background-table th, .background-table td {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      .cell-image {
+        width: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .background-table {
+        font-size: 0.8em;
+      }
+      .background-table th, .background-table td {
+        padding: 8px;
+      }
+      .cell-image {
+        width: 60px;
+      }
+      .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar-links a {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-main-container">
+    <div class="navbar-sub-container">
+      <div class="navbar-logo"></div>
+      <div class="navbar-links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="lists.html">Списки</a>
+        <a href="infa.html">Информация</a>
+        <a href="table.html"  class="active">Цены</a>
+        <a href="data_form.html" >Заказ</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<table class="background-table">
+  <tr>
+    <th>Комната</th>
+    <th>Описание</th>
+    <th>Изображение</th>
+    <th>Цена</th>
+    <th>Ссылка на проект</th>
+  </tr>
+  <tr>
+    <td>Гостиная</td>
+    <td>Современный интерьер гостиной с открытым пространством, большими окнами и минималистичной мебелью.</td>
+    <td><a href="https://i.pinimg.com/474x/a8/9c/70/a89c706ebbd19beefec394f480f68154.jpg" target="_blank">
+      <img src="https://i.pinimg.com/474x/a8/9c/70/a89c706ebbd19beefec394f480f68154.jpg" alt="Гостиная" class="cell-image">
+    </a></td>
+    <td>150,000 руб.</td>
+    <td><a href="https://www.pinterest.com/pin/123456789/" target="_blank">Подробнее о проекте</a></td>
+  </tr>
+  <tr>
+    <td>Кухня</td>
+    <td>Стильная кухня в скандинавском стиле с белыми фасадами и деревянными элементами, которая подходит для небольшой квартиры.</td>
+    <td><a href="https://i.pinimg.com/474x/a6/36/21/a63621ddde5fd5d0e87f30608698102a.jpg" target="_blank">
+      <img src="https://i.pinimg.com/474x/a6/36/21/a63621ddde5fd5d0e87f30608698102a.jpg" alt="Кухня" class="cell-image">
+    </a></td>
+    <td>100,000 руб.</td>
+    <td><a href="https://www.pinterest.com/pin/987654321/" target="_blank">Подробнее о проекте</a></td>
+  </tr>
+  <tr>
+    <td>Спальня</td>
+    <td>Уютная спальня с мягкими текстурами, нейтральными тонами и атмосферным освещением для создания расслабляющей атмосферы.</td>
+    <td><a href="https://i.pinimg.com/originals/ed/3d/06/ed3d06d62a07bb9160c62166fa1f4ea0.jpg" target="_blank">
+      <img src="https://i.pinimg.com/originals/ed/3d/06/ed3d06d62a07bb9160c62166fa1f4ea0.jpg" alt="Спальня" class="cell-image">
+    </a></td>
+    <td>120,000 руб.</td>
+    <td><a href="https://www.pinterest.com/pin/112233445/" target="_blank">Подробнее о проекте</a></td>
+  </tr>
+  <tr>
+    <td>Ванная комната</td>
+    <td>Современная ванная комната с элементами из натурального камня и стекла, которая визуально увеличивает пространство.</td>
+    <td><a href="https://i.pinimg.com/originals/6a/b1/c1/6ab1c151b67a8b01d85de47dda858b49.jpg" target="_blank">
+      <img src="https://i.pinimg.com/originals/6a/b1/c1/6ab1c151b67a8b01d85de47dda858b49.jpg" alt="Ванная комната" class="cell-image">
+    </a></td>
+    <td>80,000 руб.</td>
+    <td><a href="https://www.pinterest.com/pin/556677889/" target="_blank">Подробнее о проекте</a></td>
+  </tr>
+  <tr>
+    <td>Кабинет</td>
+    <td>Просторный и светлый кабинет с большим рабочим столом, удобным креслом и стеллажами для книг и документов.</td>
+    <td><a href="https://i.pinimg.com/474x/55/54/89/5554899381096df813ac6353c18f03aa.jpg" target="_blank">
+      <img src="https://i.pinimg.com/474x/55/54/89/5554899381096df813ac6353c18f03aa.jpg" alt="Кабинет" class="cell-image">
+    </a></td>
+    <td>110,000 руб.</td>
+    <td><a href="https://www.pinterest.com/pin/445566778/" target="_blank">Подробнее о проекте</a></td>
+  </tr>
+</table>
+</body>
+</html>
